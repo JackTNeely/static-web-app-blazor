@@ -1,0 +1,12 @@
+This record exists to provide a health check verification on the path <fqdn>/<filename.ext> for Azure Traffic Manager.
+
+Example:
+A Traffic Manager profile is configured to query HTTPS traffic over port 443 with a specified path of "/aztm-dr-verify.txt" and expects a header response code of 200.
+If, for a given endpoint domain.com, https://domain.com/aztm-dr-verify.txt does not exists and responds with a status of 404 (file not found), the endpoint will fail the health check performed by Traffic Manager and be automatically marked as "Degraded".
+In a Priority routing configuration, this can allow for Traffic Manager to redirect traffic away from the Degraded endpoint toward the next "Online" (available) endpoint.
+
+This allows for more granular troubleshooting by querying a filepath in the web directory as opposed to the root domain. I.e., an endpoint can be forced into a Degraded status by modifying the name of or deleting this file.
+Commonly, "/favicon.ico" is used to perform this type of health check.
+
+Note:
+In Traffic Manager, health check paths are configured at the Traffic Manager profile level. Paths cannot be specified separately for different endpoints within a Traffic Manager profile.
