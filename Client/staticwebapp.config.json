@@ -11,7 +11,7 @@
     "forwardingGateway": {
         "allowedForwardedHosts": [
             "cloudmigration.site",
-            "*.cloudmigration.site"
+            "www.cloudmigration.site"
         ]
     }
 }
