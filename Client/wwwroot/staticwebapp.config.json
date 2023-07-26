@@ -1,0 +1,21 @@
+{
+    "routes": [
+        {
+            "route": "https://www.cribcoin.com/*",
+            "redirect": "https://www.cloudmigration.site/{*}",
+            "statusCode": 302
+        },
+        {
+            "route": "https://cribcoin.com/*",
+            "redirect": "https://www.cloudmigration.site/{*}",
+            "statusCode": 302
+        }
+    ],
+    "globalHeaders": {
+        "Content-Type": "text/html",
+        "Cache-Control": "private, no-cache, must-revalidate, max-age=30, s-maxage=0, proxy-revalidate",
+        "Pragma": "no-cache",
+        "Expires": 0,
+        "host": "thankful-grass-0989d0e10.2.azurestaticapps.net"
+    }
+}
